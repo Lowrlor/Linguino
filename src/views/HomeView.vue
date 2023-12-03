@@ -41,7 +41,7 @@ export default defineComponent({
     reddirectToTest(id) {
       let storage = JSON.parse(localStorage.getItem("finishedTest"))
       if(storage[storage.length -1] == id - 1) this.$router.push(`/lesson/${id}/remember`)
-      if(storage == 0) this.$router.push(`/lesson/${id}/remember`)
+      if(storage == 0 && id == 1) this.$router.push(`/lesson/${id}/remember`)
     },
     reset() {
       localStorage.setItem("finishedTest", JSON.stringify([]))
